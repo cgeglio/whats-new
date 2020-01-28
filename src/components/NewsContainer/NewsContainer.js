@@ -1,8 +1,14 @@
 import React from 'react';
 import './NewsContainer.css'
+import NewsArticle from '../NewsArticle/NewsArticle'
 
 const NewsContainer = (props) => {
-  return <div className={props.id}><h1>{props.headline}</h1><p>{props.description}</p></div>
+  return <NewsArticle
+  image = {props.newsItem.img}
+  headline = {props.newsItem.headline}
+  description = {props.newsItem.description}
+  id = {props.newsItem.id}
+  />
 };
 
 export default NewsContainer;
