@@ -6,9 +6,7 @@ import entertainmentData from "/Users/carla/Mod_3/whats-new/src/data/entertainme
 
 const news = entertainmentData.map(d => {
   return <NewsContainer
-    headline = {d.headline}
-    description = {d.description}
-    id = {d.id}
+    newsItem = {d}
   />
 })
 
