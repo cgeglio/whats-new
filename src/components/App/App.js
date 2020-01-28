@@ -4,13 +4,6 @@ import './App.css';
 import NewsContainer from '../NewsContainer/NewsContainer'
 import entertainmentData from "/Users/carla/Mod_3/whats-new/src/data/entertainment.js"
 
-const news = entertainmentData.map(d => {
-  return <NewsContainer
-    headline = {d.headline}
-    description = {d.description}
-    id = {d.id}
-  />
-})
 
 class App extends Component {
   constructor() {
@@ -23,7 +16,9 @@ class App extends Component {
   render () {
     return (
       <div className="app">
-        {news}
+        <NewsContainer
+        news= {entertainmentData}
+        />
       </div>
     );
   }
