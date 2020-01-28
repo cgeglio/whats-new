@@ -3,12 +3,18 @@ import './NewsContainer.css'
 import NewsArticle from '../NewsArticle/NewsArticle'
 
 const NewsContainer = (props) => {
-  return <NewsArticle
-  image = {props.newsItem.img}
-  headline = {props.newsItem.headline}
-  description = {props.newsItem.description}
-  id = {props.newsItem.id}
-  />
+  return (
+    <div className="newsContainer">
+      {props.news.map(n => {
+        return <NewsArticle
+          image = {n.img}
+          headline = {n.headline}
+          description = {n.description}
+          url = {n.url}
+        />
+      })}
+    </div>
+  )
 };
 
 export default NewsContainer;

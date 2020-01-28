@@ -12,5 +12,4 @@ const NewsArticle = (props) => {
   )
 }
 
-
 export default NewsArticle;
