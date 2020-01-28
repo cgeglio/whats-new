@@ -5,10 +5,14 @@
 }
 
 .app {
-  display: flex;
+  display: grid;
+  grid-template-areas:
+  'search search'
+  'menu container';
+  grid-template-columns: 1fr 5fr;
   background: #141527;
   color: #FFFFFF;
-  height: 100vh;
+  height: 100%;
   text-align: center;
   width: 100%;
 }

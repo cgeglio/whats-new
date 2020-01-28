@@ -1,6 +1,10 @@
 import React from 'react';
 import './Menu.css'
 
-// MENU COMPONENT CODE GOES HERE
+const Menu = () => (
+  <div className="menu">
+    Temp Menu
+  </div>
+);
 
 export default Menu;

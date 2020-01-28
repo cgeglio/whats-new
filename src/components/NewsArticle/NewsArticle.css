@@ -1,3 +1,29 @@
 img {
-  height: 200px;
+  height: 150px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.3em;
+  margin: 15px 10px;
+}
+
+.article {
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  margin: 1%;
+  width: 45%;
+}
+
+p {
+  margin-bottom: auto;
+}
+
+a {
+  background: pink;
+  height: 30px;
+  width: 100%;
 }
