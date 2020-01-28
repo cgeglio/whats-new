@@ -1,9 +1,9 @@
 import React from 'react';
 import './Menu.css'
 
-const Menu = () => (
+const Menu = (props) => (
   <div className="menu">
-    Temp Menu
+    {props.labels.map(l => <button className="menu-button" key={l}>{l}</button>)}
   </div>
 );
 

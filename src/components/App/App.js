@@ -25,7 +25,9 @@ class App extends Component {
     return (
       <div className="app">
         <SearchForm/>
-        <Menu/>
+        <Menu
+          labels={this.state.news.map(n => n.topic)}
+        />
         {this.state.news.map(type => {
           return <NewsContainer
             key={type.topic}
