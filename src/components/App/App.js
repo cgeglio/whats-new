@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import local from '../../data/local';
 import './App.css';
+import Menu from '../Menu/Menu'
+import SearchForm from '../SearchForm/SearchForm'
 import NewsContainer from '../NewsContainer/NewsContainer'
 import entertainmentData from "/Users/carla/Mod_3/whats-new/src/data/entertainment.js"
 
@@ -16,6 +18,8 @@ class App extends Component {
   render () {
     return (
       <div className="app">
+        <SearchForm/>
+        <Menu/>
         <NewsContainer
         news= {entertainmentData}
         />
