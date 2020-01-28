@@ -4,7 +4,7 @@ import NewsArticle from '../NewsArticle/NewsArticle'
 
 const NewsContainer = (props) => {
   return (
-    <div className="newsContainer">
+    <section className="newsContainer">
       {props.news.map(n => {
         return <NewsArticle
           key={`${Date.now()}-${n.headline}`}
@@ -14,7 +14,7 @@ const NewsContainer = (props) => {
           url = {n.url}
         />
       })}
-    </div>
+    </section>
   )
 };
 
