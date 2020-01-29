@@ -7,7 +7,7 @@
 .app {
   display: grid;
   grid-template-areas:
-  'search search'
+  'menu search'
   'menu container';
   grid-template-columns: 1fr 5fr;
   background: #141527;
