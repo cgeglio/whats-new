@@ -1,3 +1,26 @@
 .menu {
+  display: flex;
+  flex-direction: column;
   grid-area: menu;
+}
+
+.menu-button {
+  background-color: inherit;
+  border: 0;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  height: 2em;
+  padding-right: .5em;
+  text-align: right;
+}
+
+.menu-button:hover {
+  background-color: #FFC202;
+  border-radius: 0 50px 50px 0px;
+  color: #141527;
+}
+
+.logo-image {
+  height: 60px;
+  margin-bottom: 20px;
 }
