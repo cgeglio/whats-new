@@ -28,10 +28,17 @@ class App extends Component {
     this.setState({topic: selectedTopic, articles: news.find(n => n.topic === selectedTopic).articles})
   }
 
+  updateFromSearch = searchResults => {
+    this.setState({topic: searchResults.keyword, articles: searchResults.articles})
+  }
+
   render () {
     return (
       <div className="app">
-        <SearchForm/>
+        <SearchForm
+          newsItems={news}
+          updateFromSearch={this.updateFromSearch}
+        />
         <Menu
           labels={news.map(n => n.topic)}
           updateNews={this.updateNews}

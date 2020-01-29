@@ -1,10 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './SearchForm.css';
 
-const SearchForm = () => (
-  <div className="searchForm">
-    Temp Search Form
-  </div>
-);
+class SearchForm extends Component {
+  constructor() {
+    super();
+    this.state = {keyword: ''}
+  }
+
+  updateKeyword = event => {
+    this.setState({keyword: event.target.value})
+  }
+
+  updateArticles = event => {
+    event.preventDefault();
+    let articles = this.props.newsItems.reduce((acc, n) => {
+      n.articles.forEach(a => acc.push(a))
+      return acc;
+    }, []);
+    this.props.updateFromSearch({keyword: this.state.keyword, articles: articles.filter(a => a.headline.toUpperCase().includes(this.state.keyword.toUpperCase()))})
+    this.setState({keyword: ''})
+  }
+
+  render() {
+    return (
+      <form>
+        <input
+          type="text"
+          placeholder="Search for articles..."
+          name="keyword"
+          value={this.state.keyword}
+          onChange={this.updateKeyword}
+        />
+        <button onClick={this.updateArticles}>Search</button>
+      </form>
+    )
+  }
+}
 
 export default SearchForm;
