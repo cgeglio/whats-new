@@ -23,16 +23,16 @@ class App extends Component {
     let labels = Object.keys(data);
     labels.forEach(label => {
       news.push({topic: label, articles: data[label]})
-    })
-    this.setState({topic: 'local', articles: data.local})
+    });
+    this.setState({topic: 'local', articles: data.local});
   }
 
   updateNews = selectedTopic => {
-    this.setState({topic: selectedTopic, articles: news.find(n => n.topic === selectedTopic).articles})
+    this.setState({topic: selectedTopic, articles: news.find(n => n.topic === selectedTopic).articles});
   }
 
   updateFromSearch = searchResults => {
-    this.setState({topic: searchResults.topic, articles: searchResults.articles})
+    this.setState({topic: searchResults.topic, articles: searchResults.articles});
   }
 
   render () {
@@ -51,7 +51,7 @@ class App extends Component {
             news={this.state.articles}
           />
       </div>
-    );
+    )
   }
 }
 
