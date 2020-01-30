@@ -11,13 +11,17 @@ class SearchForm extends Component {
     this.setState({keyword: event.target.value})
   }
 
-  updateArticles = event => {
+  findArticles = event => {
     event.preventDefault();
     let articles = this.props.newsItems.reduce((acc, n) => {
       n.articles.forEach(a => acc.push(a))
       return acc;
     }, []);
-    this.props.updateFromSearch({keyword: this.state.keyword, articles: articles.filter(a => a.headline.toUpperCase().includes(this.state.keyword.toUpperCase()))})
+    this.updateArticles(articles);
+  }
+
+  updateArticles = articles => {
+    this.props.updateFromSearch({topic: this.state.keyword, articles: articles.filter(a => a.headline.toUpperCase().includes(this.state.keyword.toUpperCase()))})
     this.setState({keyword: ''})
   }
 
@@ -31,7 +35,7 @@ class SearchForm extends Component {
           value={this.state.keyword}
           onChange={this.updateKeyword}
         />
-        <button className="search" onClick={this.updateArticles}>Search</button>
+        <button className="search" onClick={this.findArticles}>Search</button>
       </form>
     )
   }

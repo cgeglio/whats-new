@@ -9,14 +9,13 @@ import health from '../../data/health';
 import science from '../../data/science';
 import technology from '../../data/technology'
 
-
 let news = [
-  {topic: "local", articles: local},
-  {topic: "entertainment", articles: entertainment},
-  {topic: "health", articles: health},
-  {topic: "science", articles: science},
-  {topic: "technology", articles: technology}
-];
+    {topic: "local", articles: local},
+    {topic: "entertainment", articles: entertainment},
+    {topic: "health", articles: health},
+    {topic: "science", articles: science},
+    {topic: "technology", articles: technology}
+  ];
 
 class App extends Component {
   constructor() {
@@ -29,7 +28,7 @@ class App extends Component {
   }
 
   updateFromSearch = searchResults => {
-    this.setState({topic: searchResults.keyword, articles: searchResults.articles})
+    this.setState({topic: searchResults.topic, articles: searchResults.articles})
   }
 
   render () {
