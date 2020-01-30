@@ -47,7 +47,6 @@ class App extends Component {
             key={this.state.topic}
             news={this.state.articles}
           />
-        })}
       </div>
     );
   }

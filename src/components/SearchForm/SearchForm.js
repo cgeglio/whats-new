@@ -31,7 +31,7 @@ class SearchForm extends Component {
           value={this.state.keyword}
           onChange={this.updateKeyword}
         />
-        <button onClick={this.updateArticles}>Search</button>
+        <button className="search" onClick={this.updateArticles}>Search</button>
       </form>
     )
   }
