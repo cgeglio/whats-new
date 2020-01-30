@@ -19,7 +19,8 @@ describe('App', () => {
     const mockNews = {topic: "health", articles: health}
     const expected = mockNews;
 
-    expect(wrapper.state()).toEqual({topic: "local", articles: local});
+    wrapper.instance().componentDidMount();
+    expect(wrapper.state()).toEqual({topic: '', articles: []});
     wrapper.instance().updateNews(mockTopic);
     expect(wrapper.state()).toEqual(expected);
   });
@@ -29,7 +30,7 @@ describe('App', () => {
     const mockResults = {topic: "denver", articles: local}
     const expected = mockResults;
 
-    expect(wrapper.state()).toEqual({topic: "local", articles: local});
+    expect(wrapper.state()).toEqual({topic: '', articles: []});
     wrapper.instance().updateFromSearch(mockResults);
     expect(wrapper.state()).toEqual(expected);
   });
