@@ -10,4 +10,16 @@ describe('Menu', () => {
     />);
   expect(wrapper).toMatchSnapshot();
   });
+
+  it('should call the updateNews prop with a label when the label\'s corresponding menu button is clicked', () => {
+    const mockUpdateNews = jest.fn();
+    const wrapper = shallow(<Menu
+      labels={["local"]}
+      updateNews={mockUpdateNews}
+      />
+    );
+
+    wrapper.find('.menu-button').simulate('click');
+    expect(mockUpdateNews).toHaveBeenCalledWith("local");
+  })
 });
