@@ -9,7 +9,7 @@ describe('NewsContainer', () => {
         {topic: "local", articles: []},
         {topic: "entertainment", articles: []}
       ]}
-    />)
+    />);
   expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});

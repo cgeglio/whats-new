@@ -7,7 +7,7 @@ const NewsContainer = (props) => {
     <section className="newsContainer">
       {props.news.map(n => {
         return <NewsArticle
-          key={`${Date.now()}-${n.headline}`}
+          key={n.headline}
           image = {n.img}
           headline = {n.headline}
           description = {n.description}

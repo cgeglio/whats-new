@@ -4,11 +4,7 @@ exports[`NewsContainer should match the snapshot with all data passed in correct
 <section
   className="newsContainer"
 >
-  <NewsArticle
-    key="1580346982113-undefined"
-  />
-  <NewsArticle
-    key="1580346982113-undefined"
-  />
+  <NewsArticle />
+  <NewsArticle />
 </section>
 `;
