@@ -28,7 +28,6 @@ class App extends Component {
   }
 
   updateNews = selectedTopic => {
-    console.log(news);
     this.setState({topic: selectedTopic, articles: news.find(n => n.topic === selectedTopic).articles})
   }
 
