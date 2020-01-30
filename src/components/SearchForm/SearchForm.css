@@ -1,4 +1,33 @@
-.searchForm {
+form {
+  color: #FFFFFF;
   grid-area: search;
   height: 80px;
+}
+
+input {
+  border: 0;
+  background-color: #FFFFFF;
+  color: #141527;
+  font-size: 1em;
+  height: 40px;
+  text-indent: .4em;
+  margin-top: 2%;
+  width: 75%;
+}
+
+.search {
+  border: 0;
+  background-color: #FFC202;
+  border-radius: 20px;
+  color: #141527;
+  cursor: pointer;
+  font-size: .8em;
+  font-weight: bold;
+  height: 30px;
+  margin-left: 15px;
+  width: 10%;
+}
+
+.search:hover {
+  background-color: #FFFFFF;
 }
