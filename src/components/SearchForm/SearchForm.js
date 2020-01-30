@@ -17,7 +17,7 @@ class SearchForm extends Component {
       n.articles.forEach(a => acc.push(a))
       return acc;
     }, []);
-    this.props.updateFromSearch({keyword: this.state.keyword, articles: articles.filter(a => a.headline.toUpperCase().includes(this.state.keyword.toUpperCase()))})
+    this.props.updateFromSearch({topic: this.state.keyword, articles: articles.filter(a => a.headline.toUpperCase().includes(this.state.keyword.toUpperCase()))})
     this.setState({keyword: ''})
   }
 
