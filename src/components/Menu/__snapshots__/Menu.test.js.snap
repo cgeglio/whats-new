@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu should match the snapshot with all data passed in correctly 1`] = `
+<div
+  className="menu"
+>
+  <img
+    alt="whats new logo"
+    className="logo-image"
+    src="whats-new-logo.png"
+  />
+  <button
+    className="menu-button"
+    key="local"
+    onClick={[Function]}
+  >
+    Local
+  </button>
+  <button
+    className="menu-button"
+    key="health"
+    onClick={[Function]}
+  >
+    Health
+  </button>
+</div>
+`;
