@@ -24,7 +24,7 @@ class App extends Component {
     labels.forEach(label => {
       news.push({topic: label, articles: data[label]})
     })
-    this.setState({topic: "local", articles: data.local})
+    this.setState({topic: 'local', articles: data.local})
   }
 
   updateNews = selectedTopic => {
@@ -37,7 +37,7 @@ class App extends Component {
 
   render () {
     return (
-      <div className="app">
+      <div className='app'>
         <SearchForm
           newsItems={news}
           updateFromSearch={this.updateFromSearch}

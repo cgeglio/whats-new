@@ -21,16 +21,16 @@ describe('App', () => {
 
   it('should sort news data and update state when sortNews is called', () => {
     const wrapper = shallow(<App />);
-    const mockData = {"local": [{headline: "article1"}], "health": [{headline: "article2"}]};
+    const mockData = {'local': [{headline: 'article1'}], 'health': [{headline: 'article2'}]};
 
     wrapper.instance().componentDidMount();
-    expect(wrapper.state()).toEqual({topic: 'local', articles: [{headline: "article1"}], topic: 'health', articles: [{headline: "article2"}]});
+    expect(wrapper.state()).toEqual({topic: 'local', articles: [{headline: 'article1'}], topic: 'health', articles: [{headline: 'article2'}]});
   });
 
   it('should update state with a topic and articles when updateNews is called', () => {
     const wrapper = shallow(<App />);
-    const mockTopic = "health";
-    const mockNews = {topic: "health", articles: health}
+    const mockTopic = 'health';
+    const mockNews = {topic: 'health', articles: health}
     const expected = mockNews;
 
     wrapper.instance().componentDidMount();
@@ -41,7 +41,7 @@ describe('App', () => {
 
   it('should update state with a topic and articles when updateFromSearch is called', () => {
     const wrapper = shallow(<App />);
-    const mockResults = {topic: "denver", articles: local}
+    const mockResults = {topic: 'denver', articles: local}
     const expected = mockResults;
 
     expect(wrapper.state()).toEqual({topic: '', articles: []});
