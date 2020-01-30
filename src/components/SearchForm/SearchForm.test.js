@@ -6,17 +6,19 @@ describe('SearchForm', () => {
   it('should match the snapshot with all data passed in correctly', () => {
     const wrapper = shallow(<SearchForm
       newsItems={[
-        {topic: "local", articles: []},
-        {topic: "entertainment", articles: []}
+        {topic: 'local', articles: []},
+        {topic: 'entertainment', articles: []}
       ]}
       updateFromSearch={jest.fn()}
     />);
+
   expect(wrapper).toMatchSnapshot();
   });
 
   it('should start off with a default state', () => {
     const wrapper = shallow(<SearchForm />);
     const expected =  {keyword: ''};
+
     expect(wrapper.state()).toEqual(expected);
   });
 
@@ -33,8 +35,8 @@ describe('SearchForm', () => {
   it('should find search related articles and call updateArticles when findArticles is called', () => {
     const wrapper = shallow(<SearchForm
       newsItems={[
-        {topic: "local", articles: ["article1"]},
-        {topic: "entertainment", articles: ["article2"]}
+        {topic: 'local', articles: ['article1']},
+        {topic: 'entertainment', articles: ['article2']}
       ]}
       updateFromSearch={jest.fn()}
     />);
@@ -42,7 +44,7 @@ describe('SearchForm', () => {
     wrapper.instance().updateArticles = jest.fn();
 
     wrapper.instance().findArticles(mockEvent);
-    expect(wrapper.instance().updateArticles).toHaveBeenCalledWith(["article1", "article2"]);
+    expect(wrapper.instance().updateArticles).toHaveBeenCalledWith(['article1', 'article2']);
   });
 
   it('should call updateFromSearch and reset state when updateArticles is called', () => {
@@ -54,7 +56,7 @@ describe('SearchForm', () => {
     const expectedKeyword = {keyword: ''};
     const expectedSearchResult = {topic: 'denver', articles: [{headline: 'denver'}]};
 
-    wrapper.setState(mockKeyword)
+    wrapper.setState(mockKeyword);
     expect(wrapper.state()).toEqual(mockKeyword);
     wrapper.instance().updateArticles(mockArticles);
     expect(wrapper.instance().props.updateFromSearch).toHaveBeenCalledWith(expectedSearchResult);

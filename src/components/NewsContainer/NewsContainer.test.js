@@ -6,8 +6,8 @@ describe('NewsContainer', () => {
   it('should match the snapshot with all data passed in correctly', () => {
     const wrapper = shallow(<NewsContainer
       news={[
-        {topic: "local", articles: []},
-        {topic: "entertainment", articles: []}
+        {topic: 'local', articles: []},
+        {topic: 'entertainment', articles: []}
       ]}
     />);
   expect(wrapper).toMatchSnapshot();

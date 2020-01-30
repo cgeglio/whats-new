@@ -1,10 +1,10 @@
 import React from 'react';
-import './NewsContainer.css'
-import NewsArticle from '../NewsArticle/NewsArticle'
+import './NewsContainer.css';
+import NewsArticle from '../NewsArticle/NewsArticle';
 
 const NewsContainer = (props) => {
   return (
-    <section className="newsContainer">
+    <section className='newsContainer'>
       {props.news.map(n => {
         return <NewsArticle
           key={n.headline}

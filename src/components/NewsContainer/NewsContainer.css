@@ -1,7 +1,8 @@
 .newsContainer {
+  align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
   grid-area: container;
   justify-content: center;
-  padding: 0% 2%;
+  padding: 0% 2% 0% 0%;
 }
