@@ -3,24 +3,28 @@ import './App.css';
 import Menu from '../Menu/Menu'
 import SearchForm from '../SearchForm/SearchForm'
 import NewsContainer from '../NewsContainer/NewsContainer'
-import local from '../../data/local';
-import entertainment from '../../data/entertainment';
-import health from '../../data/health';
-import science from '../../data/science';
-import technology from '../../data/technology'
 
-let news = [
-    {topic: "local", articles: local},
-    {topic: "entertainment", articles: entertainment},
-    {topic: "health", articles: health},
-    {topic: "science", articles: science},
-    {topic: "technology", articles: technology}
-  ];
+let news = [];
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {topic: "local", articles: local};
+    this.state = {topic: '', articles: []};
+  }
+
+  componentDidMount() {
+    fetch('https://whats-new-api.herokuapp.com/api/v1/news')
+      .then(response => response.json())
+      .then(newsData => this.sortNews(newsData))
+      .catch(error => console.log(error))
+  }
+
+  sortNews = (data) => {
+    let labels = Object.keys(data);
+    labels.forEach(label => {
+      news.push({topic: label, articles: data[label]})
+    })
+    this.setState({topic: "local", articles: data.local})
   }
 
   updateNews = selectedTopic => {
